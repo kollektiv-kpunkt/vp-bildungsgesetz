@@ -8,12 +8,11 @@ export default {
     theme: {
         extend: {
             "colors": {
-                "background": "#FAE2E2",
-                "accent": "#D34954"
+                "foreground": "#1A2471",
+                "background": "#FFD647"
             },
             "fontFamily": {
-                "futura": ["Futura", "sans-serif"],
-                "graph": ["Graph", "sans-serif"],
+                "poppins": ["Poppins", "sans-serif"]
             }
         },
     },

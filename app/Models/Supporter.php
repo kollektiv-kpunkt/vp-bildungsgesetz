@@ -22,6 +22,7 @@ class Supporter extends Model
     protected $casts = [
         'id' => 'integer',
         'configuration_id' => 'integer',
+        'customFields' => 'array',
     ];
 
     public function configuration(): BelongsTo
