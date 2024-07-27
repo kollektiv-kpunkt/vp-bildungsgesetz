@@ -51,4 +51,34 @@
             </x-fact>
         </div>
     </x-container>
+    <x-container class="vpb-section" id="{{__('pages.landing.anchors.faq')}}">
+        <h1 class="vpb-section__title">{{__("pages.landing.sections.faq.title")}}</h1>
+        <x-question :question="__('pages.landing.sections.faq.question1')">
+            <p class="text-lg md:text-xl">{{__("pages.landing.sections.faq.answer1")}}</p>
+        </x-question>
+        <x-question :question="__('pages.landing.sections.faq.question2')">
+            <p class="text-lg md:text-xl">{{__("pages.landing.sections.faq.answer2")}}</p>
+        </x-question>
+        <x-question :question="__('pages.landing.sections.faq.question3')">
+            <p class="text-lg md:text-xl">{{__("pages.landing.sections.faq.answer3")}}</p>
+        </x-question>
+        <x-question :question="__('pages.landing.sections.faq.question4')">
+            <p class="text-lg md:text-xl">{{__("pages.landing.sections.faq.answer4")}}</p>
+        </x-question>
+        <x-question :question="__('pages.landing.sections.faq.question5')">
+            <p class="text-lg md:text-xl">{{__("pages.landing.sections.faq.answer5")}}</p>
+        </x-question>
+        <x-question :question="__('pages.landing.sections.faq.question6')">
+            <p class="text-lg md:text-xl">{{__("pages.landing.sections.faq.answer6")}}</p>
+        </x-question>
+        <x-question :question="__('pages.landing.sections.faq.question7')">
+            <p class="text-lg md:text-xl">{{__("pages.landing.sections.faq.answer7")}}</p>
+        </x-question>
+        <x-question :question="__('pages.landing.sections.faq.question8')">
+            <p class="text-lg md:text-xl">{{__("pages.landing.sections.faq.answer8")}}</p>
+        </x-question>
+        <x-question :question="__('pages.landing.sections.faq.question9')">
+            <p class="text-lg md:text-xl">{{__("pages.landing.sections.faq.answer9")}}</p>
+        </x-question>
+    </x-container>
 </x-frontend-layout>

@@ -6,3 +6,7 @@ html {
 p+p {
     margin-top: 1em;
 }
+
+::selection {
+    @apply bg-fuchsia-900 text-white;
+}

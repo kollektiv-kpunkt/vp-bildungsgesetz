@@ -8,7 +8,7 @@
         {{$slot}}
     </div>
     @if ($charCount > 290)
-        <div class="vpb-fact__read-more absolute bottom-4 left-6 bg-foreground-dark text-white flex gap-2 items-center justify-center">
+        <div class="vpb-fact__read-more absolute bottom-4 left-6 bg-foreground-dark text-white flex gap-2 items-center justify-center cursor-pointer">
             <a class="vpb-fact__read-more-link font-bold" onclick="toggleArgument('fact-{{\Illuminate\Support\Str::slug($title)}}')">
                 {{__("pages.landing.sections.facts.read_more")}}
             </a>
