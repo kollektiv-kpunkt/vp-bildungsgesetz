@@ -1,4 +1,8 @@
 html {
-    font-size: clamp(14px, 1.041666666666667vw, 24px);
+    font-size: clamp(14px, 1.041666666666667vw, 18px);
     font-family: "Poppins", sans-serif;
+}
+
+p+p {
+    margin-top: 1em;
 }

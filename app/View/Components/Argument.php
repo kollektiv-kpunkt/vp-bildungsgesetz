@@ -6,14 +6,16 @@ use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class FrontendLayout extends Component
+class Argument extends Component
 {
+    public $title;
+
     /**
      * Create a new component instance.
      */
-    public function __construct()
+    public function __construct($title)
     {
-        //
+        $this->title = $title;
     }
 
     /**
@@ -21,6 +23,6 @@ class FrontendLayout extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('layouts.frontend-layout');
+        return view('components.argument');
     }
 }
