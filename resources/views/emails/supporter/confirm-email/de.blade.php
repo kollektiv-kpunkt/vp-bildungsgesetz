@@ -8,7 +8,7 @@
 </head>
 <body id="ihfhyu">
   <div class="gjs-grid-row" id="i1il">
-    <div class="gjs-grid-column" id="iiy4"><img id="ier5" src="{{asset(public_path("images/email-header/de.png"))}}"/>
+    <div class="gjs-grid-column" id="iiy4"><img id="ier5" src="{{asset("images/email-header/de.png")}}"/>
       <div id="irta"><b id="i72w">Hallo {{$supporter->firstname}}</b></div>
       <div id="igrj">
         <span id="ipci"><b id="ijbhf">Herzlichen Danke, dass du dem Komitee für ein JA zum Bildungsgesetz beigetreten bist!</b></span>
