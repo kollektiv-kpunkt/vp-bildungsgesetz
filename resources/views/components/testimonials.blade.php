@@ -61,9 +61,6 @@
     const buttonNext = document.querySelector(".vpb-testimonials__controls__pagination__arrows__next");
 
     const animation = 500;
-    const duration = 8000;
-
-    let loop = setInterval(nextTestimonial, duration);
 
     function goToTestimonial(index) {
         activeTestimonial.setAttribute("data-active", "false");
@@ -106,28 +103,15 @@
     }
 
     buttonPrev.addEventListener("click", () => {
-        clearInterval(loop);
         prevTestimonial();
-        loop = setInterval(nextTestimonial, duration);
     });
     buttonNext.addEventListener("click", () => {
-        clearInterval(loop);
         nextTestimonial();
-        loop = setInterval(nextTestimonial, duration);
     });
 
     testimonialPages.forEach(page => {
         page.addEventListener("click", () => {
-            clearInterval(loop);
             goToTestimonial(page.getAttribute("data-index"));
-            loop = setInterval(nextTestimonial, duration);
         });
-    });
-
-    testimonialsDom.addEventListener("mouseenter", () => {
-        clearInterval(loop);
-    });
-    testimonialsDom.addEventListener("mouseleave", () => {
-        loop = setInterval(nextTestimonial, duration);
     });
 </script>
