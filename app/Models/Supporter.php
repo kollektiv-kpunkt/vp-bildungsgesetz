@@ -46,7 +46,10 @@ class Supporter extends Model
     public function getCustomField($name)
     {
         $fieldId = CustomField::where('name', $name)->first()->id;
-        return collect($this->customFields)->where('customField_id', $fieldId)->first()['value'];
+        if (!$fieldId) {
+            return false;
+        }
+        return collect($this->customFields)->where('customField_id', $fieldId)->first()['value'] ?? null;
     }
 
     /**
@@ -55,8 +58,24 @@ class Supporter extends Model
     public function setCustomField($name, $value, $store = false)
     {
         $fieldId = CustomField::where('name', $name)->first()->id;
+        if (!$fieldId) {
+            return false;
+        }
+        // Check if customField already exists
         $customFields = $this->customFields;
-        $customFields[] = ['customField_id' => $fieldId, 'value' => $value];
+        if (collect($this->customFields)->where('customField_id', $fieldId)->first()) {
+            foreach ($customFields as $key => $field) {
+                if ($field['customField_id'] == $fieldId) {
+                    $customFields[$key]['value'] = $value;
+                }
+            }
+        } else {
+            $customField = [
+                'customField_id' => $fieldId,
+                'value' => $value
+            ];
+            $customFields[] = $customField;
+        }
         $this->customFields = $customFields;
         if ($store) {
             $this->save();
@@ -74,5 +93,14 @@ class Supporter extends Model
         if ($store) {
             $this->save();
         }
+    }
+
+    /**
+     * Mark Email as verified
+     */
+    public function markEmailAsVerified() : void
+    {
+        $this->email_verified_at = now();
+        $this->save();
     }
 }

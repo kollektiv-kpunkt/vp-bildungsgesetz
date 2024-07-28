@@ -37,20 +37,46 @@ class SupporterController extends Controller
         if (!isset($validated['public'])) {
             $validated['public'] = false;
         }
-        $supporter = Supporter::updateOrCreate(
+        $supporter = Supporter::withTrashed()->updateOrCreate(
             ['email' => $validated['email']],
             $validated
         );
+        if ($supporter->trashed()) {
+            $supporter->restore();
+        }
         $supporter->setCustomFields($customFields, true);
+        if ($supporter->public && env("APP_MUST_VERIFY_EMAIL", true)) {
+            $supporter->email_verification_token = \Illuminate\Support\Str::random(32);
+            $supporter->save();
+            $notification = new \App\Notifications\Supporter\ConfirmEmail($supporter);
+            $supporter->notify($notification);
+            $message = __("controllers.supporter.store.success.with-verification", ["name" => $supporter->firstname]);
+        } else {
+            $supporter->markEmailAsVerified();
+        }
         if ($supporter) {
             return response()->json([
                 "status" => "success",
                 "code" => 200,
-                "message" => __("controllers.supporter.store.success", ["name" => $supporter->firstname]),
+                "message" => $message ?? __("controllers.supporter.store.success", ["name" => $supporter->firstname]),
                 "supporter" => $supporter
             ]);
         } else {
             return response()->json(['message' => 'Supporter creation failed'], 500);
+        }
+    }
+
+    /**
+     * Verify supporter email
+     */
+    public function verify($id, $hash)
+    {
+        $supporter = Supporter::findOrFail($id);
+        if ($supporter->email_verification_token === $hash) {
+            $supporter->markEmailAsVerified();
+            return redirect()->route('supporter.verify.success');
+        } else {
+            abort(404);
         }
     }
 }

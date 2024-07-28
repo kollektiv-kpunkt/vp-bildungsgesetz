@@ -1,22 +1,23 @@
 <?php
 
-namespace App\Notifications\Supporters;
+namespace App\Notifications\Supporter;
 
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
 
-class Thanks extends Notification
+class ConfirmEmail extends Notification
 {
     use Queueable;
 
+    public $supporter;
     /**
      * Create a new notification instance.
      */
-    public function __construct()
+    public function __construct($supporter)
     {
-        //
+        $this->supporter = $supporter;
     }
 
     /**
@@ -35,9 +36,11 @@ class Thanks extends Notification
     public function toMail(object $notifiable): MailMessage
     {
         return (new MailMessage)
-                    ->line('The introduction to the notification.')
-                    ->action('Notification Action', url('/'))
-                    ->line('Thank you for using our application!');
+            ->subject(__('emails.supporter.confirm-email.subject'))
+            ->from(config('mail.from.address'), config('mail.from.name'))
+            ->view('emails.supporter.confirm-email.' . $this->supporter->locale, [
+                'supporter' => $this->supporter,
+            ]);
     }
 
     /**

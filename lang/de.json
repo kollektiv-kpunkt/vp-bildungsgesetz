@@ -50,6 +50,7 @@
     "labels.table.configuration.created_at": "Erstellt am",
     "labels.table.configuration.updated_at": "Aktualisiert am",
     "labels.table.configuration.deleted_at": "Gelöscht am",
+    "labels.actions.verify_email": "E-Mail verifizieren",
     "labels.navigation.customfields": "Benutzerdefinierte Felder",
     "labels.navigation.customfield": "Benutzerdefiniertes Feld",
     "customfield.type.text": "Kurzes Textfeld",
@@ -74,7 +75,12 @@
     "user.resource.email_verified": "E-Mail verifiziert",
     "user.resource.email_unverified": "E-Mail nicht verifiziert",
     "labels.table.actions.user.verify": "Verifizieren",
+    "controllers.supporter.store.success.with-verification": "Danke für deine Unterstützung, :name! Bitte bestätige deine E-Mail Adresse, um auf der Website als Unterstützer:in angezeigt zu werden.",
     "controllers.supporter.store.success": "Danke für deine Unterstützung, :name!",
+    "emails.supporter.confirm-email.subject": "Bitte bestätige deine E-Mail Adresse",
+    "pages.supporter.verify_success.title": "Deine E-Mail Adresse wurde bestätigt",
+    "pages.supporter.verify_success.content": "Deine E-Mail Adresse wurde erfolgreich bestätigt. Vielen Dank für deine Unterstützung!",
+    "pages.supporter.verify_success.cta": "Zurück zur Startseite",
     "pages.landing.sections.facts.read_more": "Weiterlesen",
     "pages.landing.sections.facts.read_less": "Zuklappen",
     "pages.landing.sections.supporters.form.cta": "Komitee beitreten",
@@ -136,8 +142,8 @@
     "pages.landing.sections.supporters.people.title": "Weitere Unterstützer:innen",
     "pages.landing.anchors.donation": "spenden",
     "pages.landing.sections.donation.title": "Spenden",
-    "pages.landing.sections.donation.content.lead": "Mit Ihrer Spende unterstützen Sie die Kampagne für die Stipendien ohne Wartefristen für vorläufig Aufgenommene im Kanton Zürich. <b>Herzlichen Dank für Ihre grosszügige Unterstützung!</b>",
+    "pages.landing.sections.donation.content.lead": "Mit Ihrer Spende unterstützen Sie die Kampagne für die Stipendien ohne Wartefristen für vorläufig Aufgenommene im Kanton Zürich. <b>Herzlichen Dank für Ihre grosszügige Unterstützung!<\/b>",
     "pages.landing.sections.donation.content.body": "Spenden bitte an:<br>GRÜNE Kanton Zürich<br>IBAN: Ackerstrasse 44,<br>CH-8005 Zürich,<br>IBAN: CH09 0900 0000 8002 6744 4,<br>Vermerk: Kampagne «Keine Wartefristen bei Stipendien»",
-    "og.title": "og.title",
-    "og.description": "og.description"
+    "og.title": "JA zu Stipendien ohne Wartefristen – JA zum Bildungsgesetz",
+    "og.description": "Stipendien ermöglichen es jungen Menschen, die kein ausreichendes Einkommen haben, rasch in eine Berufsausbildung einzusteigen. Die bestehende Wartefrist von fünf Jahren für vorläufig aufgenommene Geflüchtete soll darum abgeschafft werden. Niemand kann ein Interesse haben, dass junge Menschen jahrelang warten müssen, bis sie sich eine berufliche Ausbildung leisten können."
 }
