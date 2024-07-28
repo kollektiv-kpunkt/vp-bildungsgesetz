@@ -81,4 +81,18 @@
             <p class="text-lg md:text-xl">{{__("pages.landing.sections.faq.answer9")}}</p>
         </x-question>
     </x-container>
+    <x-container class="vpb-section" id="{{__('pages.landing.anchors.supporters')}}">
+        <h1 class="vpb-section__title">{{__("pages.landing.sections.supporters.title")}}</h1>
+        <x-supporters.logos />
+        <h2 class="vpb-section__title text-xl md:text-3xl lg:text-4xl mt-12 md:mt-16 !mb-4">{{__("pages.landing.sections.supporters.people.title")}}</h2>
+        <x-supporters.people :people="$supporters"/>
+        <x-supporters.form />
+    </x-container>
+    <x-container class="vpb-section" id="{{__('pages.landing.anchors.donation')}}">
+        <h1 class="vpb-section__title">{{__("pages.landing.sections.donation.title")}}</h1>
+        <div class="vpb-donation text-lg md:text-xl">
+            <p>{!! __("pages.landing.sections.donation.content.lead") !!}</p>
+            <p>{!!__("pages.landing.sections.donation.content.body")!!}</p>
+        </div>
+    </x-container>
 </x-frontend-layout>

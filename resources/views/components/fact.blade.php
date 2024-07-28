@@ -12,7 +12,7 @@
             <a class="vpb-fact__read-more-link font-bold" onclick="toggleArgument('fact-{{\Illuminate\Support\Str::slug($title)}}')">
                 {{__("pages.landing.sections.facts.read_more")}}
             </a>
-            <x-heroicon-o-chevron-down class="w-5 h-fit"/>
+            <x-heroicon-o-chevron-down class="w-5 h-5"/>
         </div>
     @endif
 </div>

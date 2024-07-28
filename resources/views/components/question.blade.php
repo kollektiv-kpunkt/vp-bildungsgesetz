@@ -1,7 +1,7 @@
 <div class="vpb-faq" id="{{\Illuminate\Support\Str::slug($question)}}">
     <div class="vpb-faq__question flex justify-between items-center cursor-pointer gap-x-4">
         <h2 class="text-xl md:text-2xl font-bold">{{$question}}</h2>
-        <x-heroicon-s-chevron-down class="w-8 h-fit shrink-0"/>
+        <x-heroicon-s-chevron-down class="w-8 h-8 shrink-0"/>
     </div>
     <div class="vpb-faq__answer max-h-0 overflow-y-hidden">
         <div class="pt-4">
