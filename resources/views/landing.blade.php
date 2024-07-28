@@ -12,9 +12,7 @@
     </x-container>
     <x-container class="vpb-section" id="vpb-testimonials">
         <h1 class="vpb-section__title">{{__("pages.landing.sections.testimonials.title")}}</h1>
-        <div class="bg-foreground h-96 flex justify-center items-center">
-            <p class="text-white italic">Testimonial Slider folgt</p>
-        </div>
+        <x-testimonials />
     </x-container>
     <x-container class="vpb-section" id="{{__('pages.landing.anchors.arguments')}}">
         <h1 class="vpb-section__title">{{__("pages.landing.sections.arguments.title")}}</h1>
@@ -28,7 +26,7 @@
             {{__("pages.landing.sections.arguments.argument3.content")}}
         </x-argument>
         <div class="mt-8">
-            <x-link-button :label="__('pages.landing.sections.arguments.cta')" :href="'/'" target="_blank"/>
+            <x-link-button :label="__('pages.landing.sections.arguments.cta')" :href="asset('data/Argumentarium_Bildungsgesetz_Website.pdf')" target="_blank"/>
         </div>
     </x-container>
     <x-container class="vpb-section" id="{{__('pages.landing.anchors.facts')}}">
